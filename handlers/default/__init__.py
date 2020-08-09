@@ -1,6 +1,7 @@
 from aiogram import Dispatcher
-from .start import start_cmd
+
 from .login import login_test
+from .start import start_cmd
 
 
 def setup(dp: Dispatcher):

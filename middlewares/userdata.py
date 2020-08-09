@@ -1,6 +1,7 @@
-from aiogram.types import Message, CallbackQuery
 from aiogram.dispatcher.handler import current_handler
 from aiogram.dispatcher.middlewares import BaseMiddleware
+from aiogram.types import Message, CallbackQuery
+
 from models.user import User
 
 
@@ -29,5 +30,3 @@ class UserMiddleware(BaseMiddleware):
 
     async def on_process_callback_query(self, callback_query: CallbackQuery, data: dict):
         data['user'] = await self.get_userdata(callback_query.from_user.id)
-
-

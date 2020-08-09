@@ -1,7 +1,8 @@
 from aiogram import Bot, Dispatcher, executor
-from tortoise import Tortoise
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from loguru import logger
+from tortoise import Tortoise
+
 import config
 import handlers
 import middlewares
@@ -27,6 +28,7 @@ async def database_init():
     )
     await Tortoise.generate_schemas()
     logger.info("Tortoise inited!")
+
 
 if __name__ == "__main__":
     on_startup()
