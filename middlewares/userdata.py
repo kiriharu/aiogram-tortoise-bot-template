@@ -5,10 +5,10 @@ from aiogram.types import Message, CallbackQuery
 from models.user import User
 
 
-def userdata_required(f):
+def userdata_required(func):
     """Setting login_required to function"""
-    setattr(f, 'userdata_required', True)
-    return f
+    setattr(func, 'userdata_required', True)
+    return func
 
 
 class UserMiddleware(BaseMiddleware):
@@ -16,7 +16,8 @@ class UserMiddleware(BaseMiddleware):
     def __init__(self):
         super(UserMiddleware, self).__init__()
 
-    async def get_userdata(self, telegram_id: int) -> User:
+    @staticmethod
+    async def get_userdata(telegram_id: int) -> User:
         handler = current_handler.get()
         if handler:
             attr = getattr(handler, 'userdata_required', False)
