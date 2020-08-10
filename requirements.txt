@@ -11,10 +11,10 @@ idna==2.10
 iso8601==0.1.12
 loguru==0.5.1
 multidict==4.7.6
-PyPika==0.37.16
+PyPika==0.38.0
 python-dotenv==0.14.0
 pytz==2020.1
-tortoise-orm==0.16.13
+tortoise-orm==0.16.14
 typing-extensions==3.7.4.2
 win32-setctime==1.0.1
-yarl==1.4.2
+yarl==1.5.1

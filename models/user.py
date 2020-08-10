@@ -1,6 +1,8 @@
-from . import AbstractBaseModel
-from .mixins import TimeStampMixin
 from tortoise import fields
 
-class User(AbstractBaseModel, TimeStampMixin):
+from . import AbstractBaseModel
+from .mixins import TimestampMixin
+
+
+class User(AbstractBaseModel, TimestampMixin):
     telegram_id = fields.IntField(unique=True)
